@@ -1,5 +1,5 @@
 ---
-- name: Display student details
+- name: Display student details in a readable format
   hosts: localhost
   connection: local
   gather_facts: no
@@ -8,15 +8,27 @@
     - students.yaml
 
   tasks:
-    - name: Print all students' details
-      ansible.builtin.debug:
-        var: students
-
-    - name: Print formatted student info
+    - name: Print formatted student info (pretty output)
       ansible.builtin.debug:
         msg: |
-          Student Name: {{ item.name }}
-          Phone Number: {{ item.phone_number }}
-          Permanent Address: {{ item.permanent_address.house_no }}, {{ item.permanent_address.street }}, {{ item.permanent_address.city }}, {{ item.permanent_address.state }} - {{ item.permanent_address.pincode }}
-          Temporary Address: {{ item.temporary_address.house_no }}, {{ item.temporary_address.street }}, {{ item.temporary_address.city }}, {{ item.temporary_address.state }} - {{ item.temporary_address.pincode }}
+          ----------------------------------------
+          🎓 Student Details
+          ----------------------------------------
+          👤 Name            : {{ item.name }}
+          📞 Phone Number    : {{ item.phone_number }}
+
+          🏠 Permanent Address
+              House No  : {{ item.permanent_address.house_no }}
+              Street    : {{ item.permanent_address.street }}
+              City      : {{ item.permanent_address.city }}
+              State     : {{ item.permanent_address.state }}
+              Pincode   : {{ item.permanent_address.pincode }}
+
+          🏡 Temporary Address
+              House No  : {{ item.temporary_address.house_no }}
+              Street    : {{ item.temporary_address.street }}
+              City      : {{ item.temporary_address.city }}
+              State     : {{ item.temporary_address.state }}
+              Pincode   : {{ item.temporary_address.pincode }}
+          ----------------------------------------
       loop: "{{ students }}"
