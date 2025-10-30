@@ -1,0 +1,30 @@
+students:
+  - name: "Rahul Kumar"
+    phone_number: "9876543210"
+    permanent_address:
+      house_no: "12-34"
+      street: "MG Road"
+      city: "Hyderabad"
+      state: "Telangana"
+      pincode: "500001"
+    temporary_address:
+      house_no: "45-67"
+      street: "SR Nagar"
+      city: "Hyderabad"
+      state: "Telangana"
+      pincode: "500038"
+
+  - name: "Anjali Sharma"
+    phone_number: "9123456789"
+    permanent_address:
+      house_no: "56-22"
+      street: "Nehru Street"
+      city: "Bangalore"
+      state: "Karnataka"
+      pincode: "560001"
+    temporary_address:
+      house_no: "34-89"
+      street: "BTM Layout"
+      city: "Bangalore"
+      state: "Karnataka"
+      pincode: "560076"
