@@ -2,15 +2,17 @@
 - name: variables from files 
   hosts: local 
   connection: local
-  private: false
 
   vars_prompt:
     - name: COURSE 
       prompt: "Enter the course name"
+      private: false
     - name: DURATION
       prompt: "Enter the course duration"
+      private: false
     - name: TRAINER
       prompt: "Enter the trainer name"
+      private: false
 
   tasks:
     - name: Display Course Information
