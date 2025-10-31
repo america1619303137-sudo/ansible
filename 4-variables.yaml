@@ -1,0 +1,25 @@
+- name: Variables Example Play
+  hosts: localhost
+  connection: local
+
+  vars:
+    student_name: "Rahul Kumar"
+    course: "DevOps with Ansible"
+    duration: "30 Days"
+
+  tasks:
+    - name: Display Student Name
+      ansible.builtin.debug:
+        msg: "Student Name: {{ student_name }}"
+
+    - name: Display Course Name
+      ansible.builtin.debug:
+        msg: "Course Enrolled: {{ course }}"
+
+    - name: Display Course Duration
+      ansible.builtin.debug:
+        msg: "Duration: {{ duration }}"
+
+    - name: Combine All Variables
+      ansible.builtin.debug:
+        msg: "{{ student_name }} is enrolled in {{ course }} for {{ duration }}."
