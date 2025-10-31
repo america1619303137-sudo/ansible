@@ -1,7 +1,11 @@
--name: print course variable vars_files
-hosts: local hosts
-connection: ocal hosts
-tasks: 
-  -name: 
-    msg: "Hello {{ name }}, welcome to the {{ course }} course!"
+- name: Print course variable from vars_file
+  hosts: localhost
+  connection: local
 
+  vars_files:
+    - course_vars.yaml
+
+  tasks:
+    - name: Display welcome message
+      ansible.builtin.debug:
+        msg: "Hello {{ name }}, welcome to the {{ course }} course!"
