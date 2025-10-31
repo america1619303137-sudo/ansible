@@ -1,0 +1,54 @@
+---
+- name: Demonstrate Ansible variable data types
+  hosts: localhost
+  connection: local
+
+  vars:
+    # String
+    course: "Ansible"
+
+    # Integer / Number
+    duration: 30
+
+    # Float
+    rating: 4.8
+
+    # Boolean
+    is_active: true
+
+    # Null value
+    trainer: null
+
+    # List / Array
+    topics:
+      - Variables
+      - Loops
+      - Conditions
+      - Handlers
+
+    # Dictionary / Map
+    student:
+      name: "Rahul"
+      id: 101
+      city: "Hyderabad"
+
+  tasks:
+    - name: Display string variable
+      ansible.builtin.debug:
+        msg: "Course name: {{ course }}"
+
+    - name: Display number and float
+      ansible.builtin.debug:
+        msg: "Duration: {{ duration }} days, Rating: {{ rating }}"
+
+    - name: Display boolean and null
+      ansible.builtin.debug:
+        msg: "Active: {{ is_active }}, Trainer: {{ trainer }}"
+
+    - name: Display list variable
+      ansible.builtin.debug:
+        msg: "Topics covered: {{ topics }}"
+
+    - name: Display dictionary variable
+      ansible.builtin.debug:
+        msg: "Student Info: Name={{ student.name }}, ID={{ student.id }}, City={{ student.city }}"
