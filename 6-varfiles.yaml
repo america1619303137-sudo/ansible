@@ -7,6 +7,6 @@
     - 5-taskvariables.yaml
 
   tasks:
-    - name: Display welcome message
+    - name: 
       ansible.builtin.debug:
         msg: "Hello {{ name }}, welcome to the {{ course }} course!"
