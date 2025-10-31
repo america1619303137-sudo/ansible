@@ -1,11 +1,7 @@
 ---
 - name: Print course variable from v5-taskvariables.yaml
   hosts: localhost
-  connection: local
-
-  vars_files:
-    - 5-taskvariables.yaml
-
+  connection: local host
   tasks:
     - name: 
       ansible.builtin.debug:
