@@ -1,10 +1,10 @@
 ---
-- name: Print course variable from vars_file
+- name: Print course variable from v5-taskvariables.yaml
   hosts: localhost
   connection: local
 
   vars_files:
-    - 4-variables.yaml
+    - 5-taskvariables.yaml
 
   tasks:
     - name: Display welcome message
