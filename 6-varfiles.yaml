@@ -3,9 +3,9 @@
   connection: local
 
   vars_files:
-    - course_vars.yaml
+    - variables.yaml
 
   tasks:
-    - name: 
+    - name: Display welcome message
       ansible.builtin.debug:
         msg: "Hello {{ name }}, welcome to the {{ course }} course!"
