@@ -1,8 +1,8 @@
 ---
-- name: Print course variable from v5-taskvariables.yaml
+- name: Print course variable from 4-variables.yaml
   hosts: localhost
   connection: local host
   tasks:
-    - name: 
+    - name: Combine All Variables
       ansible.builtin.debug:
         msg: "Hello {{ name }}, welcome to the {{ course }} course!"
