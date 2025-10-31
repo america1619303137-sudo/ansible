@@ -1,9 +1,7 @@
 - name: Print course variable from vars_file
   hosts: localhost
   connection: local
-
-
   tasks:
-    - name: Display welcome message
+    - name: 
       ansible.builtin.debug:
         msg: "Hello {{ name }}, welcome to the {{ course }} course!"
