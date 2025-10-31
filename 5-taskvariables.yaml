@@ -1,0 +1,22 @@
+- name: Task Variables Example Play
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Task 1 - Define and use variables inside this task
+      vars:
+        name: "Rahul"
+        course: "Ansible"
+      ansible.builtin.debug:
+        msg: "Hello {{ name }}, welcome to the {{ course }} course!"
+
+    - name: Task 2 - Define different variables for this task
+      vars:
+        name: "Priya"
+        course: "Python Automation"
+      ansible.builtin.debug:
+        msg: "Hello {{ name }}, you are learning {{ course }}."
+
+    - name: Task 3 - Without vars (uses direct message)
+      ansible.builtin.debug:
+        msg: "This task has no task-level variables."
