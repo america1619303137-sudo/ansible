@@ -1,0 +1,23 @@
+- name: Play 1 - Greeting Message
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Display Welcome Message
+      ansible.builtin.debug:
+        msg: "Welcome to Ansible Multi-Play Example!"
+
+- name: Play 2 - Information Message
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Display Info Message
+      ansible.builtin.debug:
+        msg: "This is Play 2 executing a simple debug message."
+
+- name: Play 3 - Completion Message
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Display Final Message
+      ansible.builtin.debug:
+        msg: "All plays executed successfully! ✅"
