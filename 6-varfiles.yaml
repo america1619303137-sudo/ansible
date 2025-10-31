@@ -2,6 +2,7 @@
 - name: variables from files 
   hosts: local 
   connection: local
+  private: false
 
   vars_prompt:
     - name: COURSE 
@@ -15,3 +16,4 @@
     - name: Display Course Information
       ansible.builtin.debug:
         msg: "course is {{ COURSE }}, duration is {{ DURATION }}, trainer is {{ TRAINER }}"
+#its confidential if you want to make it visible the typpe private: false
