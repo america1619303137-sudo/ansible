@@ -1,36 +1,32 @@
 ---
-- name: Demonstrate conditions in Ansible
+- name: Compare user-entered number with default value
   hosts: localhost
   connection: local
 
   vars:
-    course: "Ansible"
-    duration: 30
-    trainer: "Rahul"
-    rating: 4.7
+    default_number: 50
+
+  vars_prompt:
+    - name: user_number
+      prompt: "Enter a number"
+      private: false
 
   tasks:
-    - name: Display message if course is Ansible
+    - name: Display both numbers
       ansible.builtin.debug:
-        msg: "You are learning Ansible!"
-      when: course == "Ansible"
+        msg: "Default number = {{ default_number }}, User entered = {{ user_number }}"
 
-    - name: Display message if duration is greater than 20
+    - name: When user number is greater
       ansible.builtin.debug:
-        msg: "This is a long-duration course."
-      when: duration > 20
+        msg: "Your number ({{ user_number }}) is greater than the default ({{ default_number }})"
+      when: user_number | int > default_number
 
-    - name: Display message if trainer is Rahul
+    - name: When user number is less
       ansible.builtin.debug:
-        msg: "Trainer is {{ trainer }}"
-      when: trainer == "Rahul"
+        msg: "Your number ({{ user_number }}) is less than the default ({{ default_number }})"
+      when: user_number | int < default_number
 
-    - name: Display message if rating is less than 4.5
+    - name: When numbers are equal
       ansible.builtin.debug:
-        msg: "Course rating is below average."
-      when: rating < 4.5
-
-    - name: Display message if rating is greater than or equal to 4.5
-      ansible.builtin.debug:
-        msg: "Course rating is excellent!"
-      when: rating >= 4.5
+        msg: "Your number ({{ user_number }}) is equal to the default ({{ default_number }})"
+      when: user_number | int == default_number
