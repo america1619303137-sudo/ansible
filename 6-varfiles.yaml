@@ -1,0 +1,7 @@
+-name: print course variable vars_files
+hosts: local hosts
+connection: ocal hosts
+tasks: 
+-name: 
+msg: "Hello {{ name }}, welcome to the {{ course }} course!"
+
