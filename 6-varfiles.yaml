@@ -2,8 +2,6 @@
   hosts: localhost
   connection: local
 
-  vars_files:
-    - variables.yaml
 
   tasks:
     - name: Display welcome message
