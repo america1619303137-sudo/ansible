@@ -9,4 +9,4 @@
       loop:
         - { name: 'zip' , state: 'present'}   # present==installed
         - { name: 'jq' , state: 'present'}    #absent==removed/uninstalled
-        - { name: 'git' , state: 'present'}
+        - { name: 'git' , state: 'absent'}
