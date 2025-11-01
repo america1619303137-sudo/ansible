@@ -2,7 +2,7 @@
   hosts: web
   connection: local
   tasks:
-    - name: print name
+    - name: print names
       ansible.builtin.debug:
         msg: hello raa gaandu "{{names}}"
         loop:
