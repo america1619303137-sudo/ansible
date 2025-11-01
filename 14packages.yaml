@@ -1,13 +1,12 @@
 - name: install packages
-  hosts: web 
+  hosts: web
   become: yes
   tasks:
     - name: install packages
-      ansible.builtin.packages:
-        msg: "{{names}}"
-        state: instlles
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
       loop:
-          - zip
-          - json
-          - git
-
+        - zip
+        - jq
+        - git
