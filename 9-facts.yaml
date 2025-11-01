@@ -1,5 +1,5 @@
 - name: print facts
-  hosts: webservers
+  hosts: web
   tasks:
     - name: print the facts
       ansible.builtin.debug:
