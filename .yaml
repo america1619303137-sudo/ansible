@@ -1,0 +1,13 @@
+- name: install packages
+  hosts: web 
+  become: yes
+  tasks:
+    - name: install packages
+      ansible.builtin.packages:
+        msg: "{{names}}"
+        state: instlles
+      loop:
+          - zip
+          - json
+          - git
+
