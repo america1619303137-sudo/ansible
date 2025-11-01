@@ -1,12 +1,13 @@
-- name: print names
+- name: install packages
   hosts: web
-  connection: local
+  become: yes
   tasks:
-    - name: print names
-      ansible.builtin.debug:
-        msg: "Hello {{ item }}"
+    - name: install packages on RHEL
+      ansible.builtin.dnf:
+        name: "{{ item }}"
+        state: present
       loop:
-        - modda
-        - lanja
-        - bewas
-
+        - gcc
+        - mysql
+        - git
+        - zip
