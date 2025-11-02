@@ -1,0 +1,7 @@
+- name: identify filters
+  connection: local
+  hosts: localhost
+  tasks:
+    - name: filters
+      ansible.builtin.debug:
+        msg: "kyaa re {{ person }}"
