@@ -15,7 +15,7 @@
       ansible.builtin.debug:
         msg: "list of fruits: {{fruits | split (',') }}"
       
-    - name: convert map to list
+    - name: convert list into map
       vars:
         course:
           name: coda
