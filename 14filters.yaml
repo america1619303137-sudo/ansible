@@ -39,8 +39,14 @@
 
 
     - name: convert to lower
-      vars:
-        name: "hello re gandu kaisa hai"
-  ansible.builtin.debug:
-    msg: "lower case is {{name | lower}}"
+  hosts: localhost
+  connection: local
+  vars:
+    name: "HELLO RE GANDU KAISA HAI"
+  tasks:
+    - name: lower case conversion
+      ansible.builtin.debug:
+        msg: "lower case is {{ name | lower }}"
 
+
+  
