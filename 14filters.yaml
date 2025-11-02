@@ -7,3 +7,12 @@
     - name: filters
       ansible.builtin.debug:
         msg: "kyaa re {{ person | default ('RANDI')}}"
+
+
+    - name: convertinf string to fruits
+      vars:
+        fruits: "roma,aroma,varoma"
+      ansible.builtin.debug:
+      msg: "list of fruits: {{fruits | split (',') }}"
+
+
