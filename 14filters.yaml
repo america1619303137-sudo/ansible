@@ -13,6 +13,6 @@
       vars:
         fruits: "roma,aroma,varoma"
       ansible.builtin.debug:
-      msg: "list of fruits: {{fruits | split (',') }}"
+        msg: "list of fruits: {{fruits | split (',') }}"
 
 
