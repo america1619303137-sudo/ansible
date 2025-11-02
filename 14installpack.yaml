@@ -1,0 +1,24 @@
+- name: installing packages
+  hosts: web
+  become: yes
+  tasks:
+    - name: install packages
+      ansible.builtin.packages:
+        name: "{{item.name}}"
+        state: "{{item.state}}"
+      loop: 
+          - {name: 'java' , state:'present'}
+          - {name: 'html' , state:'present'}
+          - {name: 'c' , state:'present'}
+          - {name: 'mysql' , state:'present'}
+          - {name: 'docker' , state:'present'}
+          - {name: 'yaml' , state:'present'}
+
+
+
+        
+
+        
+
+
+   
