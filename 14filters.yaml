@@ -22,6 +22,6 @@
           duration: 120days
           trainer: modi
         ansible.builtin.debug:
-          msg: "dictionary format to map  is {{course | dict2items}}"
+          msg: "dictionary format to map  is: {{course | dict2items}}"
           
 
