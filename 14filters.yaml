@@ -42,5 +42,5 @@
       vars:
         name: hello re gandu kaisa hai
   ansible.builtin.debug:
-      msg: "lower case is {{name | lower}}"
+    msg: "lower case is {{name | lower}}"
 
