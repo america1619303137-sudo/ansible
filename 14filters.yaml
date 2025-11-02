@@ -1,6 +1,8 @@
 - name: identify filters
-  connection: local
   hosts: localhost
+  connection: local
+  vars:
+    person: laude
   tasks:
     - name: filters
       ansible.builtin.debug:
