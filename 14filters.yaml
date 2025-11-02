@@ -1,9 +1,9 @@
 - name: identify filters
   hosts: localhost
   connection: local
-  vars:
-    person: laude
+  # vars:
+  #   person: laude
   tasks:
     - name: filters
       ansible.builtin.debug:
-        msg: "kyaa re {{ person }}"
+        msg: "kyaa re {{ person | default (RANDI)}}"
