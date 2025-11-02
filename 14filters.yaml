@@ -6,4 +6,4 @@
   tasks:
     - name: filters
       ansible.builtin.debug:
-        msg: "kyaa re {{ person | default (RANDI)}}"
+        msg: "kyaa re {{ person | default ('RANDI')}}"
