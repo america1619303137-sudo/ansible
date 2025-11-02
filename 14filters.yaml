@@ -47,6 +47,18 @@
     - name: lower case conversion
       ansible.builtin.debug:
         msg: "lower case is {{ name | lower }}"
+      
+    - name: convert to upper
+  hosts: localhost
+  connection: local
+  vars:
+    name: "hello re ganu kaise hai re"
+  tasks:
+    - name: upper case conversion
+      ansible.builtin.debug:
+        msg: "lower case is {{ name | upper }}"
+    
+    
 
 
   
