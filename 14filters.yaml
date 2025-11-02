@@ -40,7 +40,7 @@
 
     - name: convert to lower
       vars:
-      name: hello re gandu kaisa hai
+        name: hello re gandu kaisa hai
   ansible.builtin.debug:
       msg: "lower case is {{name | lower}}"
 
