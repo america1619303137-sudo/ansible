@@ -25,11 +25,16 @@
           msg: "dictionary format to map  is: {{course | dict2items}}"
           
     - name: convert map to list
-      vars:
-        course: 
-        - {'key': 'course' , 'value': 'coda'}
-        - {'key': 'duration' , 'value': '120days'}
-        - {'key': 'trainer' , 'value': 'modi'}
+  hosts: localhost
+  connection: local
+  vars:
+    course:
+      - { key: 'name', value: 'coda' }
+      - { key: 'duration', value: '120days' }
+      - { key: 'trainer', value: 'modi' }
+  tasks:
+    - name: course info structure
       ansible.builtin.debug:
-          msg:course info structure : "{{ course | items2dict}}"
+        msg: "course info structure : {{ course | items2dict }}"
+
 
