@@ -1,24 +1,15 @@
-- name: install packages
+- name: Install packages
   hosts: webs
   become: yes
   tasks:
-    - name: install packages
+    - name: Install multiple packages
       ansible.builtin.package:
-        name: "{{item.name}}"
-        state: "{{item.state}}"
-      loop: 
-          - {name: 'java' , state:'present'}
-          - {name: 'html' , state:'present'}
-          - {name: 'c' , state:'present'}
-          - {name: 'mysql' , state:'present'}
-          - {name: 'docker' , state:'present'}
-          - {name: 'yaml' , state:'present'}
-
-
-
-        
-
-        
-
-
-   
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
+      loop:
+        - { name: 'java', state: 'present' }
+        - { name: 'html', state: 'present' }
+        - { name: 'gcc', state: 'present' }
+        - { name: 'mysql', state: 'present' }
+        - { name: 'docker', state: 'present' }
+        - { name: 'pyyaml', state: 'present' }
