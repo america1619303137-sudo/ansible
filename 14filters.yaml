@@ -14,5 +14,14 @@
         fruits: "roma,aroma,varoma"
       ansible.builtin.debug:
         msg: "list of fruits: {{fruits | split (',') }}"
-
+      
+    - name: convert map to list
+      vars:
+        course:
+          name: coda
+          duration: 120days
+          trainer: modi
+        ansible.builtin.debug:
+          msg: "dictionary format to map  is {{course | dict2items}}"
+          
 
