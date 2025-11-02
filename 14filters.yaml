@@ -31,5 +31,5 @@
         - {'key': 'duration' , 'value': '120days'}
         - {'key': 'trainer' , 'value': 'modi'}
       ansible.builtin.debug:
-          msg:"{{course info structure : course | items2dict}}"
+          msg:course info structure : "{{ course | items2dict}}"
 
