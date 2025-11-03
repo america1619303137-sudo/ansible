@@ -5,4 +5,4 @@
     vars:
       name: "MANGAL SINGH LOVE MANGAL SINGH"
   ansible.builtin.debug:
-  - lower case format is "{{ name | upper}}"
+  msg: "lower case format is  {{ name | upper}}"
