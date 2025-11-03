@@ -64,5 +64,11 @@
       ansible.builtin.debug:
         msg: "minnimum number is: {{ NUMBERS | min }} , maximum number is : {{NUMBERS | max}}"    
 
+    - name: check for valid ip address
+      vars:
+        address: 192.168.0.1
+      ansible.builtin.debug:
+        msg: "the ip adress is valid :{{address | ansble.utils.ipaddr}}"
+
 
   
