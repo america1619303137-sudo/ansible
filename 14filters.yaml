@@ -57,8 +57,12 @@
     - name: upper case conversion
       ansible.builtin.debug:
         msg: "lower case is {{ name | upper }}"
-    
-    
+
+    - name: print minnimum and maximum
+      vars:
+        NUMBERS: ["3,4,5,6665,9098,332210,40,-4"]
+      ansible.builtin.debug:
+        msg: "minnimum number is: {{ NUMBERS | Min }} , maximum number is : {{NUMBERS | Max}}"    
 
 
   
