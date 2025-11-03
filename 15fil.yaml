@@ -1,5 +1,5 @@
 - name: uppper to lower case
-  hosts: connection
+  hosts: local
   connection: local
   vars:
     name: "MANGAL SINGH LOVE SKY"
