@@ -68,7 +68,7 @@
       vars:
         address: 192.168.0.1
       ansible.builtin.debug:
-        msg: "the ip adress is valid :{{address | ansble.utils.ipaddr}}"
+        msg: "the ip adress is valid :{{address | ansible.utils.ipaddr}}"
 
 
   
