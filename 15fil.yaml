@@ -1,6 +1,6 @@
 - name: uppper to lower case
-  hosts: local
-  connection: web
+  hosts: localhost
+  connection: local
   vars:
     name: "MANGAL SINGH LOVE SKY"
   tasks:
