@@ -1,10 +1,9 @@
-- name: convert to lower case
-  hosts: local
+- name: uppper to lower case
+  hosts: connection
   connection: local
+  vars:
+    name: "MANGAL SINGH LOVE SKY"
   tasks:
-    vars:
-      name: "MANGAL SINGH LOVE MANGAL SINGH"
-  tasks:
-    ansible.builtin.debug:
     - name: convert to lower case
-  msg: "lower case format is  {{ name | upper}}"
+      ansible.builtin.debug:
+        msg: "lower case is {{name | lower}}"
